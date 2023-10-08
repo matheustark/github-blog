@@ -38,6 +38,16 @@ export const ProfileDetailsTitle = styled.div`
         font-weight: bold;
     }
 
+    a {
+        font-size:  ${props => props.theme.fontTheme.font2};
+        text-decoration: none;
+        color: ${props => props.theme.colorsTheme.blue};
+
+        svg {
+            margin-left: 0.5rem;
+        }
+    }
+
 `;
 
 export const ProfileDetailsSubTitle = styled.span`
@@ -52,6 +62,10 @@ export const ProfileDetailsInfo = styled.div`
     span {
         color: ${(props) => props.theme.colorsTheme.baseSubTitle};
         font-size: ${props => props.theme.fontTheme.font2};
+
+        svg {
+            margin-right: 0.5rem;
+        }
     }
 
     span:nth-child(n + 2) {
