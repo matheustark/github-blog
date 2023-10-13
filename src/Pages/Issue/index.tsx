@@ -11,7 +11,7 @@ export function Issue() {
 
         <IssueTitleContainer>
             <LinkContainer>
-            <a><FontAwesomeIcon icon={faChevronLeft} />Voltar</a> <a>Ver no Github<FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+            <a href='/'><FontAwesomeIcon icon={faChevronLeft} />Voltar</a> <a>Ver no Github<FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
             </LinkContainer>
             <IssueTitleContent>JavaScript data types and data structures</IssueTitleContent>
             <IssueInfo>

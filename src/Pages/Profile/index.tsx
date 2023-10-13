@@ -12,7 +12,7 @@ export function Profile() {
         <ProfileDetails />
             <SearchForm />
             <IssueList>
-                {cardArray?.map(card =>  <li><IssueItemTitle>
+                {cardArray?.map(card =>  <a href='/issue'><IssueItemTitle>
                         <span>
                         JavaScript data types and data structures 
                         </span>
@@ -23,7 +23,7 @@ export function Profile() {
                        <IssueDescription>
                        { truncateText(textIssue, 27)}
                         </IssueDescription> 
-                    </li>)}
+                    </a>)}
             </IssueList>
         </ProfileContainer>
     )

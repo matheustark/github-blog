@@ -17,11 +17,18 @@ export const IssueList = styled.ul`
     padding: 0;
     margin-bottom: 6rem;
 
-    li {
+    a {
     width: 416px;
     height: 260px;
     background-color: ${props => props.theme.colorsTheme.basePost};
+    color: ${props => props.theme.colorsTheme.baseText};
+
     border-radius: 10px;
+    text-decoration: none;
+
+
+    cursor: pointer;
+
     }
 `
 
@@ -29,7 +36,7 @@ export const IssueItemTitle = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 1rem 2rem 1rem 2rem;    
-
+   
     span:nth-child(1) {
         max-width: 283px;
         font-size: ${props => props.theme.fontTheme.font5};
