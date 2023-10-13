@@ -7,3 +7,49 @@ export const ProfileContainer = styled.aside`
     align-items: center;
 
 `
+
+export const IssueList = styled.ul`
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px; 
+    list-style: none;
+    padding: 0;
+    margin-bottom: 6rem;
+
+    li {
+    width: 416px;
+    height: 260px;
+    background-color: ${props => props.theme.colorsTheme.basePost};
+    border-radius: 10px;
+    }
+`
+
+export const IssueItemTitle = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem 1rem 2rem;    
+
+    span:nth-child(1) {
+        max-width: 283px;
+        font-size: ${props => props.theme.fontTheme.font5};
+        color: ${props => props.theme.colorsTheme.baseTitle};
+    }
+
+    span:nth-child(2) {
+        padding-top: 6px;
+        font-size: ${props => props.theme.fontTheme.font1};
+        color: ${props => props.theme.colorsTheme.baseSpan};
+    }
+
+
+`
+
+export const IssueDescription = styled.div`
+    margin: 20px;
+
+    span {
+        
+    }
+
+`

@@ -9,7 +9,8 @@ const searchFormSchema = z.object({
 type searchFormInputs = z.infer<typeof searchFormSchema>
 
 export function SearchForm() {
-    const { register, handleSubmit } = useForm<searchFormInputs>()
+    const { register, handleSubmit } = useForm<searchFormInputs>();
+    
     return (
         <SearchContainer onSubmit={handleSubmit(data => console.log(data))}>
             <SearchLabelContainer>
