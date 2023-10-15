@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { ProfileProvider } from "./context/ProfileContext";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,9 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <Header />
+      <ProfileProvider>
      <RouterProvider router={router} />
+     </ProfileProvider>
    </ThemeProvider>
    
   )

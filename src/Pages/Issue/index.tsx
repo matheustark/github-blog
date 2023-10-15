@@ -6,6 +6,7 @@ import { faCalendarDay, faComment, faChevronLeft, faArrowUpRightFromSquare } fro
 import { IssueContainer, IssueInfo, IssueTitleContainer, IssueTitleContent, LinkContainer, IssueContent } from "./styles"
 
 export function Issue() {
+
     return (
         <IssueContainer>
 
