@@ -8,6 +8,7 @@ import { useContextSelector } from 'use-context-selector';
 import { ProfileContext } from '../../context/ProfileContext';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Markdown from 'react-markdown'
 
 export function Issue() {
     const { issueId } = useParams();
@@ -41,7 +42,8 @@ export function Issue() {
             </IssueInfo>
         </IssueTitleContainer>
         <IssueContent>
-            {issueDetail.body}
+        <Markdown>{issueDetail.body}</Markdown>
+            
         </IssueContent>
         </IssueContainer>
 
