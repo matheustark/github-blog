@@ -1,6 +1,6 @@
 import { ProfileDetails } from '../../components/ProfileDetails';
 import { SearchForm } from '../../components/SearchForm';
-import { IssueDescription, IssueItemTitle, IssueList, ProfileContainer } from './styles';
+import { IssueItemTitle, IssueList, ProfileContainer, IssueContent } from './styles';
 import { truncateText } from './utils/truncateText';
 import { ProfileContext } from '../../context/ProfileContext';
 import { useContextSelector } from 'use-context-selector';
@@ -15,7 +15,9 @@ export function Profile() {
         <ProfileDetails />
             <SearchForm />
             <IssueList>
-                {issues?.items?.map(issue =>  <a key={issue.number} href={`/issue/${issue.number}`}><IssueItemTitle>
+                {issues?.items?.map(issue =>  <a key={issue.number} href={`/issue/${issue.number}`}>
+                    <IssueContent>
+                    <IssueItemTitle>
                         <span>
                         {issue.title}
                         </span>
@@ -23,9 +25,11 @@ export function Profile() {
                         Há 1 dia
                         </span>
                     </IssueItemTitle>
-                       <IssueDescription>
+                       <div>
                        { truncateText(issue.body, 27)}
-                        </IssueDescription> 
+                        </div> 
+                    </IssueContent>
+
                     </a>)}
             </IssueList>
         </ProfileContainer>

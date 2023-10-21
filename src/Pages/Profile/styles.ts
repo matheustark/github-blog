@@ -32,10 +32,17 @@ export const IssueList = styled.ul`
     }
 `
 
+export const IssueContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem 1rem 2rem;    
+
+`
+
 export const IssueItemTitle = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 1rem 2rem 1rem 2rem;    
+    margin-bottom: 1rem;
    
     span:nth-child(1) {
         max-width: 283px;
@@ -49,14 +56,5 @@ export const IssueItemTitle = styled.div`
         color: ${props => props.theme.colorsTheme.baseSpan};
     }
 
-
-`
-
-export const IssueDescription = styled.div`
-    margin: 20px;
-
-    span {
-        
-    }
 
 `
