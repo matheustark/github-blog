@@ -2,26 +2,29 @@ import { ProfileDetails } from '../../components/ProfileDetails';
 import { SearchForm } from '../../components/SearchForm';
 import { IssueDescription, IssueItemTitle, IssueList, ProfileContainer } from './styles';
 import { truncateText } from './utils/truncateText';
-
-const cardArray = [1, 2, 3, 4, 5, 6];
-const textIssue =  'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn. Dynamic typing JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types: let foo = 42~'
+import { ProfileContext } from '../../context/ProfileContext';
+import { useContextSelector } from 'use-context-selector';
 
 export function Profile() {
+    const issues = useContextSelector(ProfileContext, (context) => {
+        return context.issues;
+    })
+
     return(
        <ProfileContainer>
         <ProfileDetails />
             <SearchForm />
             <IssueList>
-                {cardArray?.map(card =>  <a href='/issue'><IssueItemTitle>
+                {issues?.items?.map(issue =>  <a key={issue.number} href={`/issue/${issue.number}`}><IssueItemTitle>
                         <span>
-                        JavaScript data types and data structures 
+                        {issue.title}
                         </span>
                         <span>
                         Há 1 dia
                         </span>
                     </IssueItemTitle>
                        <IssueDescription>
-                       { truncateText(textIssue, 27)}
+                       { truncateText(issue.body, 27)}
                         </IssueDescription> 
                     </a>)}
             </IssueList>
