@@ -63,7 +63,7 @@ export function ProfileProvider({ children }: ProfileProviderProps) {
     const fetchIssues = useCallback(async (query?: string) => {
         const response = await api.get('search/issues', {
             params: {
-                q: `${query}repo:matheustark/github-blog`,
+                q: `${query} repo:matheustark/github-blog`,
 
             }
         });

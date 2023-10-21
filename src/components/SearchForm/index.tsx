@@ -16,9 +16,17 @@ export function SearchForm() {
     const profile = useContextSelector(ProfileContext, (context) => {
         return context.issues;
     })
+
+    const fetchIssue = useContextSelector(ProfileContext, (context) => {
+        return context.fetchIssues;
+    })
+
+    async function handleSearchIssue(data: searchFormInputs) {
+        await fetchIssue(data.query);
+    }
     
     return (
-        <SearchContainer onSubmit={handleSubmit(data => console.log(data))}>
+        <SearchContainer onSubmit={handleSubmit(data => handleSearchIssue(data))}>
             <SearchLabelContainer>
             <span>Publicações</span>
             <span> {profile.total_count} Publicações</span>
