@@ -4,6 +4,7 @@ import { IssueItemTitle, IssueList, ProfileContainer, IssueContent } from './sty
 import { truncateText } from './utils/truncateText';
 import { ProfileContext } from '../../context/ProfileContext';
 import { useContextSelector } from 'use-context-selector';
+import { formatterDate } from '../../utils/formatDate';
 
 export function Profile() {
     const issues = useContextSelector(ProfileContext, (context) => {
@@ -22,7 +23,7 @@ export function Profile() {
                         {issue.title}
                         </span>
                         <span>
-                        Há 1 dia
+                        {formatterDate(issue.created_at)}
                         </span>
                     </IssueItemTitle>
                        <div>

@@ -9,6 +9,7 @@ import { ProfileContext } from '../../context/ProfileContext';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown'
+import { formatterDate } from '../../utils/formatDate';
 
 export function Issue() {
     const { issueId } = useParams();
@@ -25,7 +26,6 @@ export function Issue() {
         fetchIssueDetail(issueId);
     }, [fetchIssueDetail, issueId])
 
-    console.log(issueDetail)
 
     return (
         <IssueContainer>
@@ -37,7 +37,7 @@ export function Issue() {
             <IssueTitleContent>{issueDetail.title}</IssueTitleContent>
             <IssueInfo>
             <span><FontAwesomeIcon icon={faGithub} /> {issueDetail?.user?.login} </span>
-            <span><FontAwesomeIcon icon={faCalendarDay} /> Há 1 dia </span>
+            <span><FontAwesomeIcon icon={faCalendarDay} /> {issueDetail.updated_at && formatterDate(issueDetail.updated_at)} </span>
              <span><FontAwesomeIcon icon={faComment} /> {issueDetail.comments} comentarios</span>
             </IssueInfo>
         </IssueTitleContainer>

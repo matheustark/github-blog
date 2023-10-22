@@ -27,14 +27,14 @@ interface IssueProps {
         number: number;
         title?: string;
         body: string;
-        created_at?: string;
+        created_at: string;
     }>
   
 }
 
 interface IssueDetailProps {
   title?: string;
-  updated_at?: string;
+  updated_at: string;
   comments?: number;
   body?: string;
   user?: {
